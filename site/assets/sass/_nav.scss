@@ -14,3 +14,21 @@
 		}
 	}
 }
+
+.navbar {
+	.logo {
+		height: 40px;
+	}
+	.navbar-list-item {
+		margin: 8px 20px 0;
+		.link-style {
+			font-family: $primary-font;
+			font-weight: normal;
+			font-size: 14px;
+			line-height: 20px;
+			color: #93A1AF;
+			display: inline-block;
+			margin-top: 5px;
+		}
+	}
+}
