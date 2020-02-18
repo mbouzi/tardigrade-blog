@@ -6,7 +6,6 @@ html,body
     padding: 0px;
 }
 
-
 input, select, textarea {
 	display: block;
 	background: #fbfbfb;
@@ -23,6 +22,7 @@ input, select, textarea {
     -ms-transition: all 0.15s ease-in-out;
     transition: all 0.15s ease-in-out;
 }
+
 input:focus, select:focus, textarea:focus {
     outline: 0;
     border-color: #2D86fb;
@@ -38,34 +38,36 @@ select {
 	color: #444;
 }
 
-.email {
-	margin-top: 1em;
-	margin-bottom: 0;
-	border-bottom-left-radius: 0;
-	border-bottom-right-radius: 0;
-}
-
 ::-webkit-input-placeholder {
-    color: #444;
+  color: #444;
+	font-family: $secondary-font;
+	font-style: normal;
+	font-size: 12px;
 }
 :focus::-webkit-input-placeholder {
-    color: #BAD7FE;
+  color: #BAD7FE;
 }
 :-moz-placeholder {
-    color: #444;
+  color: #444;
+	font-family: $secondary-font;
+	font-style: normal;
+	font-size: 12px;
 }
 :focus:-moz-placeholder {
-    color: #BAD7FE;
+  color: #BAD7FE;
 }
 ::-moz-placeholder {
-    color: #444;
+  color: #444;
 }
 :focus::-moz-placeholder {
-    color: #BAD7FE;
+  color: #BAD7FE;
 }
 :-ms-input-placeholder {
-    color: #444;
+  color: #444;
+	font-family: $secondary-font;
+	font-weight: normal;
+	font-size: 12px;
 }
 :focus:-ms-input-placeholder {
-    color: #BAD7FE;
+  color: #BAD7FE;
 }
