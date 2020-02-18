@@ -1,0 +1,17 @@
+{{ with .Site.GetPage "banner/banner.md"}}
+<div class="container-fluid banner-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-7 col-sm-6 banner-column">
+                <p class="banner-left">{{.Params.leftText}}</p>
+            </div>
+            <div class="col-xs-5 col-sm-6 banner-column text-right">
+                <a class="banner-cta" href="https://tardigrade.io">
+                    <p class="banner-right">{{.Params.rightText}}</p>
+                    <img src="/img/tardigrade-logo-only.svg" height="10" width="17"/><span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{{end}}
