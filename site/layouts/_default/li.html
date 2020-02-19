@@ -2,7 +2,7 @@
   <a href="{{ .RelPermalink }}"><img src="{{ .Params.image }}" class="card-img-top" alt="..."></a>
   <div class="card-body">
 		{{ partial "post-date" . }}
-    <a href="{{ .RelPermalink }}"><h5 class="card-title">{{ .Title | markdownify }}</h5></a>
+    <a class="card-title-link" href="{{ .RelPermalink }}"><h5 class="card-title">{{ .Title | markdownify }}</h5></a>
 		{{ if gt (len .Summary) 80 }}
     <p class="card-text">{{slicestr .Summary 0 80}}...</p>
 		{{end}}

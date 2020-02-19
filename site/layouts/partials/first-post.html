@@ -6,12 +6,12 @@
 			</div>
 			<div class="col-md-6">
 				<div class="card-body">
-					<h5 class="card-title">{{ .Title | markdownify }}</h5>
+					<a class="card-title-link" href="{{ .RelPermalink }}"><h5 class="card-title">{{ .Title | markdownify }}</h5></a>
 					{{ partial "post-date" . }}
 					{{ if gt (len .Summary) 300 }}
 			    <p class="card-text">{{slicestr .Summary 0 300}}...</p>
 					{{end}}
-			    <button href="" class="card-cta">Read more</button>
+			    <button href="{{ .RelPermalink }}" class="card-cta">Read more</button>
 			  </div>
 			</div>
 		</div>

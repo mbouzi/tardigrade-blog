@@ -34,12 +34,17 @@
 			}
 		}
 	}
-	.card-title {
-		font-family: $primary-font;
-		font-weight: bold;
-		font-size: 16px;
-		line-height: 26px;
-		color: $color--post-text;
+	.card-title-link {
+		&:hover {
+			text-decoration: none;
+		}
+		.card-title {
+			font-family: $primary-font;
+			font-weight: bold;
+			font-size: 16px;
+			line-height: 26px;
+			color: $color--post-text;
+		}
 	}
 	.card-text {
 		font-family: $secondary-font;
@@ -71,9 +76,14 @@
 	.card-body {
 		padding-top: 0;
 	}
-	.card-title {
-		font-size: 34px;
-		line-height: 40px;
+	.card-title-link {
+		&:hover {
+			text-decoration: none;
+		}
+		.card-title {
+			font-size: 34px;
+			line-height: 40px;
+		}
 	}
 }
 
