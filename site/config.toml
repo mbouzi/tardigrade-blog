@@ -2,3 +2,6 @@ baseurl = "/"
 languageCode = "en-us"
 languageLang = "en"
 title = "Homepage"
+
+# Pagination
+paginate = 9

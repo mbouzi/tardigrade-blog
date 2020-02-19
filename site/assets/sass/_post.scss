@@ -1,9 +1,13 @@
 .homepage-posts {
 	margin-top: 100px;
+	.homepage-post {
+		display: none;
+	}
 }
 .card, .first-post {
 	max-height: 440px;
 	margin-bottom: 40px;
+	border: none !important;
 	.card-img-top {
 		border-radius: 0;
 		border-top-left-radius: 6px;
@@ -71,17 +75,31 @@
 		font-size: 34px;
 		line-height: 40px;
 	}
-	.card-cta {
-		width: 271px;
-		height: 46px;
-		color: #fff;
-		background: $color--blue;
-		border: none;
-		font-family: $primary-font;
-		font-weight: 800;
-		font-size: 14px;
-		line-height: 18px;
-		border-radius: 6px;
-		text-transform: capitalize;
+}
+
+.load-more, .card-cta {
+	width: 271px;
+	height: 46px;
+	color: #fff;
+	background: $color--blue;
+	border: none;
+	font-family: $primary-font;
+	font-weight: 800;
+	font-size: 14px;
+	line-height: 18px;
+	border-radius: 6px;
+	text-transform: capitalize;
+	.fa {
+		font-size: 20px;
+		position: relative;left: 4px;
+		top: 2px;
 	}
+}
+
+.align-items-center {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 20px 0 80px;
 }
