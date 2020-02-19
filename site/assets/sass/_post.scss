@@ -1,4 +1,10 @@
 .card {
+	max-height: 440px;
+	.card-img-top {
+		border-radius: 0;
+		border-top-left-radius: 6px;
+		border-top-right-radius: 6px;
+	}
 	.card-body {
 		.blog-post-info {
 			.row {
@@ -26,5 +32,27 @@
 		font-size: 16px;
 		line-height: 26px;
 		color: $color--post-text;
+	}
+	.card-text {
+		font-family: $secondary-font;
+		font-weight: 300;
+		font-size: 14px;
+		line-height: 20px;
+		color: $color--post-text;
+	}
+	.read-more {
+		font-family: $primary-font;
+		font-weight: bold;
+		font-size: 12px;
+		line-height: 26px;
+		display: inline-block;
+		color: $color--blue;
+	}
+	.fa-angle-right {
+		position: relative;
+		left: 6px;
+		top: 2px;
+		font-size: 18px;
+		color: $color--blue;
 	}
 }
