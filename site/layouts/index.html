@@ -1,16 +1,20 @@
 {{ define "main" }}
 
-{{ partial "jumbotron" (dict "imageUrl" "/img/blog-index.jpg" "title" "Latest stories") }}
+{{ range first 1 (where .Paginator.Pages "Section" "post")}}
+	{{ partial "first-post" . }}
+{{ end }}
 
-<div class="container">
-  <div class="row">
-			{{ range where .Paginator.Pages "Section" "post"}}
-        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-          {{ .Render "li"}}
-        </div>
-      {{ end }}
-  </div>
-  {{ partial "pagination" . }}
+<div class="homepage-posts">
+	<div class="container">
+	  <div class="row">
+				{{ range where .Paginator.Pages "Section" "post"}}
+	        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+	          {{ .Render "li"}}
+	        </div>
+	      {{ end }}
+	  </div>
+	  {{ partial "pagination" . }}
+	</div>
 </div>
 
 {{end}}

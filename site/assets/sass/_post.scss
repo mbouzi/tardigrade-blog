@@ -1,5 +1,9 @@
-.card {
+.homepage-posts {
+	margin-top: 100px;
+}
+.card, .first-post {
 	max-height: 440px;
+	margin-bottom: 40px;
 	.card-img-top {
 		border-radius: 0;
 		border-top-left-radius: 6px;
@@ -54,5 +58,30 @@
 		top: 2px;
 		font-size: 18px;
 		color: $color--blue;
+	}
+}
+
+.first-post {
+	background: #fff;
+	padding: 50px 0;
+	.card-body {
+		padding-top: 0;
+	}
+	.card-title {
+		font-size: 34px;
+		line-height: 40px;
+	}
+	.card-cta {
+		width: 271px;
+		height: 46px;
+		color: #fff;
+		background: $color--blue;
+		border: none;
+		font-family: $primary-font;
+		font-weight: 800;
+		font-size: 14px;
+		line-height: 18px;
+		border-radius: 6px;
+		text-transform: capitalize;
 	}
 }
