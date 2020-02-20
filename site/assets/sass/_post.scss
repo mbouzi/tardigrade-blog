@@ -134,7 +134,7 @@
 		border-radius: 10px;
 	}
 	.row {
-		margin: 40px 0 0;
+		margin: 40px 0 15px;
 		display: flex;
 		justify-content: space-between;
 	}
@@ -154,6 +154,7 @@
 		font-weight: 300;
 		font-size: 18px;
 		line-height: 31px;
+		margin-bottom: 60px;
 		p {
 			max-width: none;
 		}
@@ -183,8 +184,11 @@
 		font-size: 18px;
 	}
 	.fa {
-		margin-right: 10px;
+		margin-right: 15px;
 		color: $color--blue;
+		font-size: 27px;
+		position: relative;
+		top: 2px;
 	}
 	&__link {
 		&:hover {
