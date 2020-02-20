@@ -1,14 +1,22 @@
 {{ define "main" }}
-
-  <div class="mw6 center ph3 pv4">
-    <h1 class="f2 lh-title b mb3">{{.Title}}</h1>
-    <div class="flex justify-between grey-3">
-      <p>{{ .Date.Format "Mon, Jan 2, 2006" }}</p>
-      <p>Read in {{ .ReadingTime }} minutes</p>
+	<div class="back-msg">
+		<div class="container">
+			<a class="back-msg__link" href="/">
+				<i class="fa fa-angle-left"></i>
+				<p class="back-msg__text">Storj Blog</p>
+			</a>
+		</div>
+	</div>
+  <div class="container single-post">
+    <h1 class="single-post__title">{{.Title}}</h1>
+		{{ if .Params.image }}<img src="{{ .Params.image }}" class="single-post__image" alt="{{ .Title }}" />{{ end }}
+    <div class="row">
+			{{ range .Params.authors }}
+				<p class="single-post__text">By <a class="single-post__text__link" href="{{ "/authors/" | relLangURL }}{{ . | urlize }}">{{ . }}</a><p>
+			{{ end }}
+			<p class="single-post__text">{{ .Date.Format "Mon, Jan 2, 2006" }}</p>
     </div>
-    <div class="cms mw6">
-      <p>{{ .Description }}</p>
-      {{ if .Params.image }}<img src="{{ .Params.image }}" alt="{{ .Title }}" />{{ end }}
+    <div class="single-post__content">
       {{ .Content }}
     </div>
   </div>
