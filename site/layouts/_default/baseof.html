@@ -38,12 +38,12 @@
 
 		$("#searchInput").on("keyup", function() {
 	    var value = $(this).val().toLowerCase();
-			console.log("VALUE:", value)
 	    $("#posts .homepage-post").filter(function() {
 	      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-				if($(".homepage-post:visible").length < 9) {
+				if($(".homepage-post:visible").length < 10) {
 					$("#loadMore").hide()
 				}
+
 				if(value.length == 0) {
 					$(".homepage-post").css("display", "none");
 					$(".homepage-post").slice(0, 9).css("display", "flex");
