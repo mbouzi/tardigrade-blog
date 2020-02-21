@@ -4,6 +4,7 @@
 	{{ partial "first-post" . }}
 {{ end }}
 {{ $lastUrlElement := index (last 1 (split (delimit (split .URL "/") "," "") ",")) 0 }}
+{{ $filterUrlElement := index (split (delimit (split .URL "/") "," "") ",") 1 }}
 
 <div class="homepage-posts">
 	<div class="container">
@@ -12,7 +13,7 @@
 				<h3 class="col-md-2 more-posts">More Posts</h3>
 				<div class="col-md-4 offset-3 dropdowns">
 					{{ partial "taxonomy" (dict "taxonomy" .Site.Taxonomies.categories "taxonomyname" "categories" "last" $lastUrlElement  )}}
-					{{ partial "taxonomy" (dict "taxonomy" .Site.Taxonomies.authors "taxonomyname" "authors" "last" $lastUrlElement  )}}
+					{{ partial "taxonomy" (dict "taxonomy" .Site.Taxonomies.authors "taxonomyname" "authors" "last" $lastUrlElement "filter" $filterUrlElement  )}}
 				</div>
 				<div class="col-md-3 search">
 				</div>

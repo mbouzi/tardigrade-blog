@@ -1,6 +1,8 @@
 {{ $taxonomy := .taxonomy }}
 {{ $taxonomyname := .taxonomyname }}
 {{ $last := .last }}
+{{ $filter := .filter }}
+{{ $author := delimit (split $last "-") " " " " }}
 {{ $currentPage := . }}
 {{ $url := .URL }}
 {{ with $taxonomy }}
@@ -8,13 +10,25 @@
 	  <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			{{ if eq $taxonomyname "categories"}}<img src="/img/category-icon.svg" class="icon">{{else}}<img src="/img/author-icon.svg" class="icon">{{end}}
 	    {{ if eq $taxonomyname "categories"}}
-				{{ if $last}}
-					{{$last}}
+				{{if $last}}
+					{{ if $filter}}
+						{{ $last }}
+					{{ else }}
+						{{ trim $taxonomyname "s"}}: all
+					{{ end }}
 				{{else}}
 					{{trim $taxonomyname "ies"}}y: all
 				{{end}}
 			{{else}}
-				{{ trim $taxonomyname "s"}}: all
+				{{ if $last }}
+					{{ if $filter}}
+						{{ $author }}
+					{{ else }}
+						{{ trim $taxonomyname "s"}}: all
+					{{ end }}
+				{{else}}
+					{{ trim $taxonomyname "s"}}: all
+				{{end}}
 			{{end}}
 			 <i class="fa fa-angle-down"></i>
 	  </button>
