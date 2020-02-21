@@ -6,6 +6,16 @@
 
 <div class="homepage-posts">
 	<div class="container">
+		<div class="filter-section">
+			<div class="row">
+				<h3 class="col-md-2 more-posts">More Posts</h3>
+		    {{ if default true .Site.Params.sidebar.showTaxonomy }}
+		        {{ partial "taxonomies" . }}
+		    {{ end }}
+				<div class="col-md-3 search">
+				</div>
+			</div>
+		</div>
 	  <div class="row posts">
 			{{ range where .Site.Pages.ByPublishDate.Reverse "Section" "post" }}
 				<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 homepage-post">
