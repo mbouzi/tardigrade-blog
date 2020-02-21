@@ -18,10 +18,11 @@
 					</div>
 		    {{ end }}
 				<div class="col-md-3 search">
+					<input id="searchInput" class="form-control" type="text" placeholder="Search" aria-label="Search">
 				</div>
 			</div>
 		</div>
-	  <div class="row posts">
+	  <div id="posts" class="row posts">
 			{{ range (.Paginator 9).Pages.ByPublishDate.Reverse }}
 				<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 homepage-post">
 	          {{ .Render "li"}}
