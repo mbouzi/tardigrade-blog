@@ -1,14 +1,27 @@
 {{ $taxonomy := .taxonomy }}
 {{ $taxonomyname := .taxonomyname }}
+{{ $last := .last }}
 {{ $currentPage := . }}
+{{ $url := .URL }}
 {{ with $taxonomy }}
 	<div class="btn-group dropdown">
 	  <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			{{ if eq $taxonomyname "categories"}}<img src="/img/category-icon.svg" class="icon">{{else}}<img src="/img/author-icon.svg" class="icon">{{end}}
-	    {{ if eq $taxonomyname "categories"}}{{trim $taxonomyname "ies"}}y: all{{else}}{{ trim $taxonomyname "s"}}: all{{end}}
+	    {{ if eq $taxonomyname "categories"}}
+				{{ if $last}}
+					{{$last}}
+				{{else}}
+					{{trim $taxonomyname "ies"}}y: all
+				{{end}}
+			{{else}}
+				{{ trim $taxonomyname "s"}}: all
+			{{end}}
 			 <i class="fa fa-angle-down"></i>
 	  </button>
 	  <div class="dropdown-menu">
+			{{ if $last}}
+				<a class="dropdown-item" href="/"><p>All</p></a>
+			{{end}}
 			{{ range $name, $value := . }}
 				<a class="dropdown-item" href="{{ printf "/%s/" $taxonomyname | relLangURL }}{{ $name | urlize }}"><p >{{ humanize $name }}</p></a>
 			{{ end }}

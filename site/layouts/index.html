@@ -3,15 +3,17 @@
 {{ range first 1 (where .Paginator.Pages "Section" "post")}}
 	{{ partial "first-post" . }}
 {{ end }}
+{{ $lastUrlElement := index (last 1 (split (delimit (split .URL "/") "," "") ",")) 0 }}
 
 <div class="homepage-posts">
 	<div class="container">
 		<div class="filter-section">
 			<div class="row">
 				<h3 class="col-md-2 more-posts">More Posts</h3>
-		    {{ if default true .Site.Params.sidebar.showTaxonomy }}
-		        {{ partial "taxonomies" . }}
-		    {{ end }}
+				<div class="col-md-4 offset-3 dropdowns">
+					{{ partial "taxonomy" (dict "taxonomy" .Site.Taxonomies.categories "taxonomyname" "categories" "last" $lastUrlElement  )}}
+					{{ partial "taxonomy" (dict "taxonomy" .Site.Taxonomies.authors "taxonomyname" "authors" "last" $lastUrlElement  )}}
+				</div>
 				<div class="col-md-3 search">
 				</div>
 			</div>

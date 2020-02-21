@@ -20,7 +20,10 @@
 	window.onload = function() {
 
 		$(".homepage-post").slice(0, 9).css("display", "flex");
-
+		
+		if($(".homepage-post:hidden").length === 0) {
+			$("#loadMore").hide()
+		}
 		$("#loadMore").click(function(e){ // click event for load more
 		e.preventDefault();
 		if($(".homepage-post:hidden").length !== 0){ // check if any hidden divs still exist
