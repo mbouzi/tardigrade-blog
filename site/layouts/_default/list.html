@@ -13,12 +13,16 @@
 				<h3 class="col-md-2 more-posts">More Posts</h3>
 		    {{ if default true .Site.Params.sidebar.showTaxonomy }}
 					<div class="col-md-4 offset-3 dropdowns">
-						{{ partial "taxonomy" (dict "taxonomy" .Site.Taxonomies.categories "taxonomyname" "categories" "last" $lastUrlElement "filter" $filterUrlElement   )}}
 						{{ partial "taxonomy" (dict "taxonomy" .Site.Taxonomies.authors "taxonomyname" "authors" "last" $lastUrlElement "filter" $filterUrlElement  )}}
+						{{ partial "taxonomy" (dict "taxonomy" .Site.Taxonomies.categories "taxonomyname" "categories" "last" $lastUrlElement "filter" $filterUrlElement   )}}
 					</div>
 		    {{ end }}
 				<div class="col-md-3 search">
-					<input id="searchInput" class="form-control" type="text" placeholder="Search" aria-label="Search">
+					<form class="form-inline active-pink-4">
+						<input id="searchInput" class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search the blog"
+							aria-label="Search">
+						<i class="fa fa-search" aria-hidden="true"></i>
+					</form>
 				</div>
 			</div>
 		</div>

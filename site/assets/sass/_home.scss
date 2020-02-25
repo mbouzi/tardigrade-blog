@@ -40,6 +40,8 @@
 					box-sizing: border-box;
 					box-shadow: 0px 7px 14px rgba(20, 29, 37, 0.6);
 					border-radius: 6px;
+					max-height: 460px;
+					overflow: scroll;
 					.dropdown-item {
 						color: $color--post-text;
 						font-family: $secondary-font;

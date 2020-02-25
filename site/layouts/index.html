@@ -13,8 +13,8 @@
 			<div class="row">
 				<h3 class="col-md-2 more-posts">More Posts</h3>
 				<div class="col-md-4 offset-3 dropdowns">
-					{{ partial "taxonomy" (dict "taxonomy" .Site.Taxonomies.categories "taxonomyname" "categories" "last" $lastUrlElement "filter" $filterUrlElement )}}
 					{{ partial "taxonomy" (dict "taxonomy" .Site.Taxonomies.authors "taxonomyname" "authors" "last" $lastUrlElement "filter" $filterUrlElement  )}}
+					{{ partial "taxonomy" (dict "taxonomy" .Site.Taxonomies.categories "taxonomyname" "categories" "last" $lastUrlElement "filter" $filterUrlElement )}}
 				</div>
 				<div class="col-md-3 search">
 					<form class="form-inline active-pink-4">
