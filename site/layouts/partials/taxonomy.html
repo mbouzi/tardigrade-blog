@@ -11,20 +11,20 @@
 			{{ if eq $taxonomyname "categories"}}<img src="/img/category-icon.svg" class="icon">{{else}}<img src="/img/author-icon.svg" class="icon">{{end}}
 	    {{ if eq $taxonomyname "categories"}}
 				{{if $last}}
-					{{ if $filter}}
+					{{ if eq $filter "categories"}}
 						{{ $last }}
 					{{ else }}
-						{{ trim $taxonomyname "s"}}: all
+						{{trim $taxonomyname "ies"}}y: all
 					{{ end }}
 				{{else}}
 					{{trim $taxonomyname "ies"}}y: all
 				{{end}}
 			{{else}}
 				{{ if $last }}
-					{{ if $filter}}
-						{{ $author }}
-					{{ else }}
+					{{ if eq $filter "categories"}}
 						{{ trim $taxonomyname "s"}}: all
+					{{ else }}
+						{{ $author }}
 					{{ end }}
 				{{else}}
 					{{ trim $taxonomyname "s"}}: all
