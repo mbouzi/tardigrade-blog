@@ -10,7 +10,7 @@
 		<div class="collapse nav navbar-collapse justify-content-end" id="navbarNav">
 	    <ul class="navbar-nav">
 				{{range where .Site.Pages "Params.class" "navitem"}}
-				<li class="navbar-list-item"><a class="link-style" href="{{ .Params.link }}">{{ .Title }}</a></li>
+				<li class="navbar-list-item {{if eq .Params.active true}}active{{end}}"><a class="link-style" href="{{ .Params.link }}">{{ .Title }}</a></li>
 				{{end}}
 				<a class="nav-item-cta" href="/sign-up-node-operator/"><button class="btn btn-primary nav-join">Join the Waitlist</button></a></li>
 	      <!-- <li class="nav-item active">
