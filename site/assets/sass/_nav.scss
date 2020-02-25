@@ -38,6 +38,12 @@
 			display: inline-block;
 			margin-top: 5px;
 		}
+		&.active {
+			.link-style {
+				font-weight: bold;
+				color: $color--blue;
+			}
+		}
 	}
 	.nav-item-cta {
 		.nav-join {
@@ -47,8 +53,9 @@
 			font-size: 14px;
 			line-height: 20px;
 			color: $color--blue;
-			// border: 2px solid $color--blue;
+			border: 2px solid $color--blue;
 			background: transparent;
+			box-shadow: none;
 		}
 	}
 }
