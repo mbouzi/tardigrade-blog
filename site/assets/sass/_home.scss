@@ -6,9 +6,18 @@
 			font-weight: bold;
 			font-size: 22px;
 			color: $color--post-text;
+			@media (max-width: 991px) {
+				text-align: center;
+				position: relative;
+				bottom: 25px;
+				margin: 0 auto;
+			}
 		}
 		.dropdowns {
 			float: right;
+			@media (max-width: 991px) {
+				display: none;
+			}
 			.dropdown {
 				.dropdown-toggle {
 					text-transform: capitalize;
@@ -56,19 +65,24 @@
 			}
 		}
 	}
-	.form-inline {
-		.form-control {
-			 height: 33px;
-			 width: 100% !important;
-			 margin-right: 0 !important;
-			 font-size: 14px;
+	.search {
+		@media (max-width: 991px) {
+			display: none;
 		}
-		.fa-search {
-			color: #93A1AF;
-			font-size: 14px;
-			position: absolute;
-			right: 24px;
-			z-index: 2;
+		.form-inline {
+			.form-control {
+				 height: 33px;
+				 width: 100% !important;
+				 margin-right: 0 !important;
+				 font-size: 14px;
+			}
+			.fa-search {
+				color: #93A1AF;
+				font-size: 14px;
+				position: absolute;
+				right: 24px;
+				z-index: 2;
+			}
 		}
 	}
 }

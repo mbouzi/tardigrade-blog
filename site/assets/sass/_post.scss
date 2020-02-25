@@ -99,7 +99,13 @@
 		}
 	}
 }
-
+.align-items-center {
+	.load-more {
+		@media (max-width: 768px) {
+			width: 100%;
+		}
+	}
+}
 .load-more, .card-cta {
 	width: 271px;
 	height: 46px;

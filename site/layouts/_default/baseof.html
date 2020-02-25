@@ -18,7 +18,12 @@
 
 <script type="text/javascript">
 	window.onload = function() {
-		$(".homepage-post").slice(0, 9).css("display", "flex");
+
+		if ($(window).width() < 960) {
+			$(".homepage-post").slice(0, 8).css("display", "flex");
+		} else {
+			$(".homepage-post").slice(0, 9).css("display", "flex");
+		}
 
 		if($(".homepage-post:hidden").length === 0) {
 			$("#loadMore").hide()
@@ -27,7 +32,12 @@
 		$("#loadMore").click(function(e){ // click event for load more
 			e.preventDefault();
 			if($(".homepage-post:hidden").length !== 0){ // check if any hidden divs still exist
-				$(".homepage-post:hidden").slice(0, 9).css("display", "flex");
+				if ($(window).width() < 960) {
+					$(".homepage-post:hidden").slice(0, 8).css("display", "flex");
+				} else {
+					$(".homepage-post:hidden").slice(0, 9).css("display", "flex");
+				}
+
 				if($(".homepage-post:hidden").length === 0) {
 					$("#loadMore").hide()
 				}
