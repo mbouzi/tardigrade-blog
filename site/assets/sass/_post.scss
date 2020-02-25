@@ -5,7 +5,6 @@
 	}
 }
 .card, .first-post {
-	max-height: 440px;
 	margin-bottom: 40px;
 	border: none !important;
 	.card-img-top {
@@ -79,6 +78,16 @@
 	}
 	.card-body {
 		padding-top: 0;
+		@media (max-width: 991px) {
+			margin: 0;
+			padding: 30px 0 0;
+		}
+		.card-cta {
+			@media (max-width: 768px) {
+				width: 100%;
+				margin-top: 20px;
+			}
+		}
 	}
 	.card-title-link {
 		&:hover {
