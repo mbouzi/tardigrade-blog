@@ -10,7 +10,7 @@
 	<div class="container">
 		<div class="filter-section">
 			<div class="row">
-				<h3 class="col-md-2 more-posts">More Posts</h3>
+				<h3 class="col-sm-12 col-md-12 col-lg-2 more-posts">More Posts</h3>
 		    {{ if default true .Site.Params.sidebar.showTaxonomy }}
 					<div class="col-md-4 offset-3 dropdowns">
 						{{ partial "taxonomy" (dict "taxonomy" .Site.Taxonomies.authors "taxonomyname" "authors" "last" $lastUrlElement "filter" $filterUrlElement  )}}
