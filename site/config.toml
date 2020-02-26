@@ -10,3 +10,8 @@ paginate = 9
 [taxonomies]
   category = "categories"
   author = "authors"
+
+	[[headers]]
+	  for = "/*"
+	  [headers.values]
+	Access-Control-Allow-Origin = "*"
