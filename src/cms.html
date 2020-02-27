@@ -7,6 +7,19 @@
   <title>Content Manager</title>
 
   <script src="https://identity-js.netlify.com/v1/netlify-identity-widget.js"></script>
+	<script>
+		if (document.readyState === "loading") {
+			document.addEventListener("DOMContentLoaded", function () {
+				netlifyIdentity.init({
+					APIUrl: "https://adoring-borg-aad42e.netlify.com/.netlify/identity"
+				});
+			});
+		} else {
+			netlifyIdentity.init({
+				APIUrl: "https://adoring-borg-aad42e.netlify.com/.netlify/identity"
+			});
+		}
+	</script>
 </head>
 <body>
   <script src="<%= htmlWebpackPlugin.files.chunks.cms.entry %>"></script>
