@@ -5,7 +5,8 @@ backend:
   gateway_url: "https://adoring-borg-aad42e.netlify.com/.netlify/git/github"
 
 media_folder: "site/static/img" # Folder where user uploaded files should go
-public_folder: "img"
+public_folder: "/blog/img"
+publish_mode : editorial_workflow
 
 collections:
   - name: "business"
