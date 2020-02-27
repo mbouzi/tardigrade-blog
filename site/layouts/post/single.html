@@ -1,4 +1,9 @@
+
 {{ define "main" }}
+{{ $title := .Title }}
+{{ $url := printf "%s" .Permalink | absLangURL }}
+{{ $summary := slicestr .Content 0 80 }}
+{{ $body := print $title ", by " .Title "\n" $summary "\n\n" $url "\n" }}
 	<div class="back-msg">
 		<div class="container">
 			<a class="back-msg__link" href="/">
@@ -9,7 +14,7 @@
 	</div>
   <div class="single-post">
 		<div class="container">
-	    <h1 class="single-post__title">{{.Title}}</h1>
+	    <h1 class="single-post__title">{{ $title }}</h1>
 			{{ if .Params.image }}<img src="{{ .Params.image }}" class="single-post__image" alt="{{ .Title }}" />{{ end }}
 	    <div class="row">
 				{{ range .Params.authors }}
@@ -20,6 +25,7 @@
 	    <div class="single-post__content">
 	      {{ .Content }}
 	    </div>
+			{{ partial "social-share" (dict "title" $title "url" $url "post-body" $body  )}}
 			<div id="disqus_thread">
 				<script>
 					(function() {

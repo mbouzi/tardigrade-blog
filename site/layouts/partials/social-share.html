@@ -1,0 +1,20 @@
+{{ $title := .title }}
+{{ $url := .url }}
+{{ $body := .body }}
+<div id="sharing">
+  <a href="http://www.facebook.com/sharer.php?u={{ $url }}" class="facebook" aria-label="share on Facebook">
+		Facebook
+  </a>
+
+  <a href="http://twitter.com/share?url={{ $url }}&text={{ $title }}&via={{with .Site.Social.twitter }}{{ . }}{{ end }}" class="twitter" aria-label="share on Twitter">
+		Twitter
+  </a>
+
+	<a href="http://reddit.com/share?url={{ $url }}&text={{ $title }}&via={{with .Site.Social.twitter }}{{ . }}{{ end }}" class="reddit" aria-label="share on Reddit">
+		Reddit
+  </a>
+
+  <a href="mailto:?subject=Check%20out%20{{ $title }}.&body={{ $body }}" class="twitter" aria-label="share on Email">
+		Email
+  </a>
+</div>
