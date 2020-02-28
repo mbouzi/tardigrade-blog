@@ -11,7 +11,7 @@
 					{{ if gt (len .Summary) 300 }}
 			    <p class="card-text">{{slicestr .Summary 0 300}}...</p>
 					{{end}}
-			    <button href="{{ .RelPermalink }}" class="card-cta">Read more</button>
+			    <a href="{{ .RelPermalink }}" class="card-cta">Read more</a>
 			  </div>
 			</div>
 		</div>
