@@ -1,41 +1,30 @@
 {{ define "main" }}
 
-{{ range first 1 (where .Paginator.Pages "Section" "post")}}
-	{{ partial "first-post" . }}
-{{ end }}
 {{ $lastUrlElement := index (last 1 (split (delimit (split .URL "/") "," "") ",")) 0 }}
 {{ $filterUrlElement := index (split (delimit (split .URL "/") "," "") ",") 1 }}
 
-<div class="homepage-posts">
+<div class="post-results">
 	<div class="container">
-		<div class="filter-section">
-			<div class="row">
-				<h3 class="col-md-2 more-posts">More Posts</h3>
-		    {{ if default true .Site.Params.sidebar.showTaxonomy }}
-					<div class="col-md-4 offset-3 dropdowns">
-						{{ partial "taxonomy" (dict "taxonomy" .Site.Taxonomies.authors "taxonomyname" "authors" "last" $lastUrlElement "filter" $filterUrlElement  )}}
-						{{ partial "taxonomy" (dict "taxonomy" .Site.Taxonomies.categories "taxonomyname" "categories" "last" $lastUrlElement "filter" $filterUrlElement   )}}
-					</div>
-		    {{ end }}
-				<div class="col-md-3 search">
-					<form class="form-inline active-pink-4">
-						<input id="searchInput" class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search the blog"
-							aria-label="Search">
-						<i class="fa fa-search" aria-hidden="true"></i>
-					</form>
-				</div>
-			</div>
+		<div class="back-msg">
+			<a class="back-msg__link" href="/">
+				<i class="fa fa-angle-left"></i>
+				<p class="back-msg__text">Storj Blog</p>
+			</a>
 		</div>
-	  <div id="posts" class="row posts">
-			{{ range .Pages.ByPublishDate.Reverse }}
-				<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 homepage-post">
-	          {{ .Render "li"}}
-	      </div>
-	     {{ end }}
-	  </div>
-		<div class="align-items-center">
-			<button id="loadMore" class="load-more">see more posts<i class="fa fa-angle-down"></i></button>
+		<div class="post-results__heading">
+	    {{ if $lastUrlElement }}
+					<h4 class="post-results__heading__title">{{ $lastUrlElement }} ({{ len $lastUrlElement }})</h4>
+					{{ partial "taxonomy" (dict "taxonomy" .Site.Taxonomies.authors "taxonomyname" "authors" "last" $lastUrlElement "filter" $filterUrlElement  )}}
+					{{ partial "taxonomy" (dict "taxonomy" .Site.Taxonomies.categories "taxonomyname" "categories" "last" $lastUrlElement "filter" $filterUrlElement   )}}
+	    {{ end }}
 		</div>
+		<div id="posts" class="row posts">
+		 {{ range .Pages.ByPublishDate.Reverse }}
+			 <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 post-result">
+					 {{ .Render "li"}}
+			 </div>
+			{{ end }}
+	 </div>
 	</div>
 </div>
 
