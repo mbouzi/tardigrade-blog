@@ -5,6 +5,7 @@
 {{ end }}
 {{ $lastUrlElement := index (last 1 (split (delimit (split .URL "/") "," "") ",")) 0 }}
 {{ $filterUrlElement := index (split (delimit (split .URL "/") "," "") ",") 1 }}
+{{ $paginator := .Paginate (where .Data.Pages "Type" "posts") }}
 
 
 <div class="homepage-posts">
@@ -26,15 +27,13 @@
 			</div>
 		</div>
 	  <div id="posts" class="row posts">
-			{{ range where .Site.Pages.ByPublishDate.Reverse "Section" "post" }}
+			{{ range where .Paginator.Pages "Section" "post"}}
 				<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 homepage-post">
 	          {{ .Render "li"}}
 	      </div>
 	     {{ end }}
 	  </div>
-		<div class="align-items-center">
-			<button id="loadMore" class="load-more">see more posts<i class="fa fa-angle-down"></i></button>
-		</div>
+		{{ partial "pagination" . }}
 	</div>
 </div>
 

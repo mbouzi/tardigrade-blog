@@ -1,18 +1,54 @@
-{{ if gt .Paginator.TotalPages 1 }}
+{{ $paginator := .Paginator }}
 
-<nav class="cf pa3">
-    {{ if .Paginator.HasNext }}
-    <a class="fl dib link dim black f6 f5-ns b pa2" title="Next Page" href="{{ .Paginator.Next.URL }}">
-        &larr; Previous
-    </a>
+<!-- If there's more than one page. -->
+{{ if gt $paginator.TotalPages 1 }}
+
+  <ul class="pagination">
+
+    <!-- First page. -->
+    {{ if ne $paginator.PageNumber 1 }}
+    <li class="pagination__item pagination__item--first">
+      <a class="pagination__link pagination__link--first" href="{{ $paginator.First.URL }}">
+        ««
+      </a>
+    </li>
     {{ end }}
-    <div class="pagination">
-        {{ if .Paginator.HasPrev }}
-        <a class="fl dib link dim black f6 f5-ns b pa2" title="Previous Page" href="{{ .Paginator.Prev.URL }}">
-            Next &rarr;
-        </a>
-        {{ end }}
-    </div>
-</nav>
 
+    <!-- Previous page. -->
+    {{ if $paginator.HasPrev }}
+    <li class="pagination__item pagination__item--previous">
+      <a href="{{ $paginator.Prev.URL }}" class="pagination__link pagination__link--previous">
+        «
+      </a>
+    </li>
+    {{ end }}
+
+    <!-- Page numbers. -->
+    {{ range $paginator.Pagers }}
+    <li class="pagination__item{{ if eq . $paginator }} pagination__item--current{{ end }}">
+      <a href="{{ .URL }}" class="pagination__link">
+        {{ .PageNumber }}
+      </a>
+    </li>
+    {{ end }}
+
+    <!-- Next page. -->
+    {{ if $paginator.HasNext }}
+    <li class="pagination__item pagination__item--next">
+      <a href="{{ $paginator.Next.URL }}" class="pagination__link pagination__link--next">
+        »
+      </a>
+    </li>
+    {{ end }}
+
+    <!-- Last page. -->
+    {{ if ne $paginator.PageNumber $paginator.TotalPages }}
+    <li class="pagination__item pagination__item--last">
+      <a class="pagination__link pagination__link--last" href="{{ $paginator.Last.URL }}">
+        »»
+      </a>
+    </li>
+    {{ end }}
+
+  </ul><!-- .pagination -->
 {{ end }}
