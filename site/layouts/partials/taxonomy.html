@@ -12,7 +12,7 @@
 	    {{ if eq $taxonomyname "categories"}}
 				{{if $last}}
 					{{ if eq $filter "categories"}}
-						{{ $last }}
+						{{ trim $taxonomyname "ies"}}y: {{$last }}
 					{{ else }}
 						{{trim $taxonomyname "ies"}}y: all
 					{{ end }}
@@ -24,7 +24,7 @@
 					{{ if eq $filter "categories"}}
 						{{ trim $taxonomyname "s"}}: all
 					{{ else }}
-						{{ $author }}
+						{{ trim $taxonomyname "s"}}: {{ $author }}
 					{{ end }}
 				{{else}}
 					{{ trim $taxonomyname "s"}}: all

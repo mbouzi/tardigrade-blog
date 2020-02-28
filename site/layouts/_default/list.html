@@ -2,6 +2,7 @@
 
 {{ $lastUrlElement := index (last 1 (split (delimit (split .URL "/") "," "") ",")) 0 }}
 {{ $filterUrlElement := index (split (delimit (split .URL "/") "," "") ",") 1 }}
+{{ $resultName := delimit (split $lastUrlElement "-") " " " " }}
 
 <div class="post-results">
 	<div class="container">
@@ -13,9 +14,14 @@
 		</div>
 		<div class="post-results__heading">
 	    {{ if $lastUrlElement }}
-					<h4 class="post-results__heading__title">{{ $lastUrlElement }} ({{ len $lastUrlElement }})</h4>
-					{{ partial "taxonomy" (dict "taxonomy" .Site.Taxonomies.authors "taxonomyname" "authors" "last" $lastUrlElement "filter" $filterUrlElement  )}}
-					{{ partial "taxonomy" (dict "taxonomy" .Site.Taxonomies.categories "taxonomyname" "categories" "last" $lastUrlElement "filter" $filterUrlElement   )}}
+					<h4 class="post-results__heading__title">{{ $resultName }} ({{ len .Pages }})</h4>
+					<div class="post-results__heading__title__filtering">
+						{{ if eq $filterUrlElement "authors"}}
+							{{ partial "taxonomy" (dict "taxonomy" .Site.Taxonomies.authors "taxonomyname" "authors" "last" $lastUrlElement "filter" $filterUrlElement  )}}
+						{{ else }}
+							{{ partial "taxonomy" (dict "taxonomy" .Site.Taxonomies.categories "taxonomyname" "categories" "last" $lastUrlElement "filter" $filterUrlElement   )}}
+						{{ end }}
+					</div>
 	    {{ end }}
 		</div>
 		<div id="posts" class="row posts">
