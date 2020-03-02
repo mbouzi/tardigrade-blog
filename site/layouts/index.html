@@ -27,7 +27,7 @@
 			</div>
 		</div>
 	  <div id="posts" class="row posts">
-			{{ range where .Paginator.Pages "Section" "post"}}
+			{{ range $paginator.Pages }}
 				<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 homepage-post">
 	          {{ .Render "li"}}
 	      </div>
