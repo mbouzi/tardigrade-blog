@@ -2,7 +2,3 @@ baseurl = "/"
 languageCode = "en-us"
 languageLang = "en"
 title = "Homepage"
-
-[params]
-  # Main sections (currently used for the recent posts in the sidebar)
-  mainSections = ["post"]

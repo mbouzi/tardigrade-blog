@@ -1,0 +1,16 @@
+.banner-bg {
+	height: 28px;
+	background: #2582FF;
+	color: #fff;
+	font-family: $primary-font;
+	font-weight: 500;
+	font-size: 10px;
+	.banner-column {
+		margin-top: 7px;
+	}
+	.text-right {
+		.banner-cta {
+			color: #fff;
+		}
+	}
+}
