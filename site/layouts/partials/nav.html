@@ -1,20 +1,19 @@
 {{ partial "banner" . }}
-<nav class="overflow-x-scroll overflow-x-visible-ns flex justify-between items-center center bg-white divider-grey relative">
-
-	<!-- Logo -->
-	<a href="/" class="pa3 db mr4 h-100 w3 flex-none">
-		<img src="/img/logo.svg" alt="Kaldi logo" class="br0 db mb0 w-100"/>
-	</a>
-
-	<!-- Primary Nav -->
-	<ul class="flex b grey-3">
-		<li><a href="/products" class="pa3 no-underline db">Products</a></li>
-
-		<li><a href="/values" class="pa3 no-underline db">Values</a></li>
-
-		<li><a href="/post" class="pa3 no-underline db">Blog</a></li>
-
-		<li><a href="/contact" class="pa3 no-underline db">Contact</a></li>
-	</ul>
-
+<nav class="navbar navbar-expand-lg menu">
+	<div class="container">
+		<a href="/" class="navbar-brand">
+			<img src="/img/tardigrade-logo.svg" alt="Storj" class="logo">
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+		<div class="collapse nav navbar-collapse justify-content-end" id="navbarNav">
+	    <ul class="navbar-nav">
+				{{range where .Site.Pages "Params.class" "navitem"}}
+				<li class="navbar-list-item {{if eq .Params.active true}}active{{end}}"><a class="link-style" href="{{ .Params.link }}">{{ .Title }}</a></li>
+				{{end}}
+				<a class="nav-item-cta" href="/sign-up-node-operator/"><button class="btn btn-primary nav-join">Join the Waitlist</button></a></li>
+	    </ul>
+	  </div>
+	</div>
 </nav>

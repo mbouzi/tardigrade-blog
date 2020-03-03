@@ -11,6 +11,48 @@
 	.text-right {
 		.banner-cta {
 			color: #fff;
+			.fa {
+				height: 10px;
+				margin-left: 8px;
+			}
+			.banner-cta-text {
+				display: inline-block;
+				margin-right: 5px;
+			}
+		}
+	}
+}
+
+.navbar {
+	.navbar-list-item {
+		margin: 2px 20px 0;
+		.link-style {
+			font-family: $primary-font;
+			font-weight: normal;
+			font-size: 14px;
+			line-height: 20px;
+			color: #93A1AF;
+			display: inline-block;
+			margin-top: 5px;
+		}
+		&.active {
+			.link-style {
+				font-weight: bold;
+				color: $color--blue;
+			}
+		}
+	}
+	.nav-item-cta {
+		.nav-join {
+			font-family: $primary-font;
+			font-style: normal;
+			font-weight: 500;
+			font-size: 14px;
+			line-height: 20px;
+			color: $color--blue;
+			border: 2px solid $color--blue;
+			background: transparent;
+			box-shadow: none;
 		}
 	}
 }
