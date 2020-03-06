@@ -1,4 +1,8 @@
+
 {{ define "main" }}
+{{ $title := .Title }}
+{{ $url := printf "%s" .Permalink | absLangURL }}
+{{ $summary := slicestr .Content 0 80 }}
 	<div class="back-msg">
 		<div class="container">
 			<a class="back-msg__link" href="/">
@@ -7,28 +11,43 @@
 			</a>
 		</div>
 	</div>
-  <div class="container single-post">
-    <h1 class="single-post__title">{{.Title}}</h1>
-		{{ if .Params.image }}<img src="{{ .Params.image }}" class="single-post__image" alt="{{ .Title }}" />{{ end }}
-    <div class="row">
-			{{ range .Params.authors }}
-				<p class="single-post__text">By <a class="single-post__text__link" href="{{ "/authors/" | relLangURL }}{{ . | urlize }}">{{ . }}</a><p>
-			{{ end }}
-			<p class="single-post__text">{{ .Date.Format "Mon, Jan 2, 2006" }}</p>
-    </div>
-    <div class="single-post__content">
-      {{ .Content }}
-    </div>
-		<div id="disqus_thread">
-			<script>
-				(function() {
-						var d = document, s = d.createElement('script');
-								s.src = 'https://storjblog.disqus.com/embed.js';
-								s.setAttribute('data-timestamp', +new Date());
-								(d.head || d.body).appendChild(s);
-								})();
-			</script>
-			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <div class="single-post">
+		<div class="container">
+	    <h1 class="single-post__title">{{ $title }}</h1>
+			{{ if .Params.image }}<img src="{{ .Params.image }}" class="single-post__image" alt="{{ .Title }}" />{{ end }}
+	    <div class="row">
+				{{ range .Params.authors }}
+					<p class="single-post__text">By <a class="single-post__text__link" href="{{ "/authors/" | relLangURL }}{{ . | urlize }}">{{ . }}</a><p>
+				{{ end }}
+				<p class="single-post__text">{{ .Date.Format "Mon, Jan 2, 2006" }}</p>
+	    </div>
+	    <div class="single-post__content">
+	      {{ .Content }}
+	    </div>
+			{{ partial "social-share" (dict "title" $title "url" $url)}}
+			<div id="disqus_thread">
+				<script>
+					(function() {
+							var d = document, s = d.createElement('script');
+									s.src = 'https://storjblog.disqus.com/embed.js';
+									s.setAttribute('data-timestamp', +new Date());
+									(d.head || d.body).appendChild(s);
+									})();
+				</script>
+				<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+			</div>
+		</div>
+		<div class="single-post__more-posts">
+			<div class="container">
+				<h4 class="single-post__more-posts__heading">More Posts</h4>
+				<div class="row">
+					{{ range first 3 (where .Site.Pages.ByPublishDate.Reverse "Section" "post") }}
+							<div class="col-sm-12 col-md-6 col-lg-4 col-xs-12 single-post__more-posts__post-wrapper">
+								{{ .Render "li"}}
+							</div>
+					{{ end }}
+				</div>
+			</div>
 		</div>
   </div>
 {{ end }}
