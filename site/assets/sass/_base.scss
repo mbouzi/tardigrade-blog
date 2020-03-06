@@ -96,6 +96,8 @@ select {
 		.icon {
 			display: inline-block;
 			margin-right: 4px;
+			width: 14px;
+			height: 24px;
 		}
 	}
 	.dropdown-toggle::after {
@@ -115,6 +117,8 @@ select {
 			font-size: 14px;
 			font-weight: normal;
 			text-transform: capitalize;
+			line-height: 8px;
+	    padding-top: 25px;
 		}
 	}
 	.btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):active, .show>.btn-secondary.dropdown-toggle {
