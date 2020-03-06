@@ -17,9 +17,9 @@
 					<h4 class="post-results__heading__title">{{ $resultName }} ({{ len .Pages }})</h4>
 					<div class="post-results__heading__title__filtering">
 						{{ if eq $filterUrlElement "authors"}}
-							{{ partial "taxonomy" (dict "taxonomy" .Site.Taxonomies.authors "taxonomyname" "authors" "last" $lastUrlElement "filter" $filterUrlElement  )}}
+							{{ partial "taxonomy" (dict "taxonomy" .Site.Taxonomies.authors "taxonomyname" "authors" "lastUrlElement" $lastUrlElement "filter" $filterUrlElement  )}}
 						{{ else }}
-							{{ partial "taxonomy" (dict "taxonomy" .Site.Taxonomies.categories "taxonomyname" "categories" "last" $lastUrlElement "filter" $filterUrlElement   )}}
+							{{ partial "taxonomy" (dict "taxonomy" .Site.Taxonomies.categories "taxonomyname" "categories" "lastUrlElement" $lastUrlElement "filter" $filterUrlElement   )}}
 						{{ end }}
 					</div>
 	    {{ end }}

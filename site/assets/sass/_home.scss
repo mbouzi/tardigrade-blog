@@ -21,3 +21,20 @@
 		}
 	}
 }
+
+.pagination {
+	margin-bottom: 50px;
+	margin-top: 30px;
+	.paging-navigation {
+		font-family: $primary-font;
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		.paging-button {
+			color: $color--blue;
+		}
+		.disabled {
+			display: none;
+		}
+	}
+}

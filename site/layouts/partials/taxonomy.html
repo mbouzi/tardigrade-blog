@@ -1,8 +1,8 @@
 {{ $taxonomy := .taxonomy }}
 {{ $taxonomyname := .taxonomyname }}
-{{ $last := .last }}
+{{ $lastUrlElement := .lastUrlElement }}
 {{ $filter := .filter }}
-{{ $author := delimit (split $last "-") " " " " }}
+{{ $author := delimit (split $lastUrlElement "-") " " " " }}
 {{ $currentPage := . }}
 {{ $url := .URL }}
 {{ with $taxonomy }}
@@ -10,9 +10,9 @@
 	  <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			{{ if eq $taxonomyname "categories"}}<img src="/img/category-icon.svg" class="icon">{{else}}<img src="/img/author-icon.svg" class="icon">{{end}}
 	    {{ if eq $taxonomyname "categories"}}
-				{{if $last}}
+				{{if $lastUrlElement}}
 					{{ if eq $filter "categories"}}
-						{{ trim $taxonomyname "ies"}}y: {{$last }}
+						{{ trim $taxonomyname "ies"}}y: {{$lastUrlElement }}
 					{{ else }}
 						{{trim $taxonomyname "ies"}}y: all
 					{{ end }}
@@ -20,7 +20,7 @@
 					{{trim $taxonomyname "ies"}}y: all
 				{{end}}
 			{{else}}
-				{{ if $last }}
+				{{ if $lastUrlElement }}
 					{{ if eq $filter "categories"}}
 						{{ trim $taxonomyname "s"}}: all
 					{{ else }}
@@ -33,7 +33,7 @@
 			 <i class="fa fa-angle-down"></i>
 	  </button>
 	  <div class="dropdown-menu">
-			{{ if $last}}
+			{{ if $lastUrlElement}}
 				<a class="dropdown-item" href="/"><p>All</p></a>
 			{{end}}
 			{{ range $name, $value := . }}

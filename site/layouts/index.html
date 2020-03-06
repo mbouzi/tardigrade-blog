@@ -13,8 +13,8 @@
 		<div class="filter-section">
 			<h3 class="more-posts">More Posts</h3>
 			<div class="dropdowns">
-				{{ partial "taxonomy" (dict "taxonomy" .Site.Taxonomies.authors "taxonomyname" "authors" "last" $lastUrlElement "filter" $filterUrlElement  )}}
-				{{ partial "taxonomy" (dict "taxonomy" .Site.Taxonomies.categories "taxonomyname" "categories" "last" $lastUrlElement "filter" $filterUrlElement )}}
+				{{ partial "taxonomy" (dict "taxonomy" .Site.Taxonomies.authors "taxonomyname" "authors" "lastUrlElement" $lastUrlElement "filter" $filterUrlElement  )}}
+				{{ partial "taxonomy" (dict "taxonomy" .Site.Taxonomies.categories "taxonomyname" "categories" "lastUrlElement" $lastUrlElement "filter" $filterUrlElement )}}
 			</div>
 		</div>
 	  <div id="posts" class="row posts">
