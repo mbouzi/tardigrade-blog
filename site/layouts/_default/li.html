@@ -1,6 +1,11 @@
-<a href="{{ .RelPermalink }}" class="no-underline pa3 bg-grey-1 br1 mb2 db raise w-100">
-	<h2 class="f3 b lh-title mb1 primary">{{ .Title }}</h2>
-	<p class="mid-gray lh-title mb2">{{ .Date.Format "Mon, Jan 2, 2006" }}</p>
-	<p class="mb0">{{ .Description }}</p>
-	<p class="link b dib black mb0">Read more →</p>
-</a>
+<div class="card">
+  <a href="{{ .RelPermalink }}"><img src="{{ .Params.image }}" class="card-img-top" alt="..."></a>
+  <div class="card-body">
+		{{ partial "post-date" . }}
+    <a class="card-title-link" href="{{ .RelPermalink }}"><h5 class="card-title">{{ .Title | markdownify }}</h5></a>
+		{{ if gt (len .Summary) 80 }}
+    <p class="card-text">{{slicestr .Summary 0 80}}...</p>
+		{{end}}
+    <a href="{{ .RelPermalink }}" class="read-more">Read more </a><i class="fa fa-angle-right"></i>
+  </div>
+</div>
