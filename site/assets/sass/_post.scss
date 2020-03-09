@@ -1,7 +1,18 @@
 .homepage-posts {
 	margin-top: 100px;
-	.homepage-post {
-		display: none;
+}
+.post-results{
+	margin-bottom: 50px;
+	&__heading {
+		margin: 20px 0 30px;
+		display: flex;
+		justify-content: space-between;;
+		&__title {
+			font-family: $primary-font;
+			font-weight: bold;
+			font-size: 18px;
+			text-transform: capitalize;
+		}
 	}
 }
 .card, .first-post {
@@ -11,6 +22,7 @@
 		border-radius: 0;
 		border-top-left-radius: 10px;
 		border-top-right-radius: 10px;
+		max-height: 200px;
 	}
 	.card-body {
 		.blog-post-info {
@@ -83,6 +95,11 @@
 			padding: 30px 0 0;
 		}
 		.card-cta {
+			padding: 12px 100px;
+			&:hover {
+				text-decoration: none;
+				color: #fff;
+			}
 			@media (max-width: 768px) {
 				width: 100%;
 				margin-top: 20px;
@@ -135,6 +152,7 @@
 
 .single-post {
 	margin: 20px 0;
+	margin-bottom: -15px;
 	&__title {
 		font-family: $primary-font;
 		font-weight: bold;
@@ -183,6 +201,57 @@
 		}
 		a {
 			color: $color--blue;
+		}
+	}
+	&__social-share {
+		margin-bottom: 40px;
+		.share-btn {
+			border: 1px solid #AFB7C1;
+			box-sizing: border-box;
+			border-radius: 6px;
+			padding: 10px 15px;
+			margin-right: 15px;
+			font-family: $secondary-font;
+			font-weight: normal;
+			font-size: 16px;
+			color: #494949;
+		}
+		&__heading {
+			font-family: $primary-font;
+			font-weight: bold;
+			font-size: 16px;
+			line-height: 26px;
+			color: #000;
+			margin-bottom: 20px;
+		}
+		&__img {
+			margin-right: 10px;
+		}
+		.facebook {
+			background: #3C5A99;
+			color: #fff;
+			border: none;
+		}
+	}
+	&__more-posts {
+		margin-top: 40px;
+		background: rgba(197, 203, 219, 0.5);
+		padding-top: 50px;
+		padding-bottom: 80px;
+		&__heading {
+			font-family: $primary-font;
+			font-weight: bold;
+			font-size: 22px;
+			line-height: 48px;
+			color: #000;
+		}
+		&__post-wrapper {
+			.blog-post-info {
+				padding: 0;
+				.row {
+					margin: 0;
+				}
+			}
 		}
 	}
 }
