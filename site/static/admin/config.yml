@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: netlify-cms
+  branch: master
   identity_url: "https://adoring-borg-aad42e.netlify.com/.netlify/identity"
   gateway_url: "https://adoring-borg-aad42e.netlify.com/.netlify/git/github"
 
