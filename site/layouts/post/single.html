@@ -2,7 +2,6 @@
 {{ define "main" }}
 {{ $title := .Title }}
 {{ $url := printf "%s" .Permalink | absLangURL }}
-{{ $summary := slicestr .Content 0 80 }}
 	<div class="back-msg">
 		<div class="container">
 			<a class="back-msg__link" href="/">
