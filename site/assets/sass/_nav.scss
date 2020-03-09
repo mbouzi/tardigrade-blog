@@ -1,7 +1,7 @@
 .banner-bg {
 	height: 28px;
-	background: #2582FF;
-	color: #fff;
+	background: #D5DAE0;
+	color: $color--dark-blue;
 	font-family: $primary-font;
 	font-weight: 500;
 	font-size: 10px;
@@ -10,7 +10,7 @@
 	}
 	.text-right {
 		.banner-cta {
-			color: #fff;
+			color: $color--dark-blue;
 			.fa {
 				height: 10px;
 				margin-left: 8px;
@@ -18,6 +18,11 @@
 			.banner-cta-text {
 				display: inline-block;
 				margin-right: 5px;
+			}
+			.banner-logo {
+				height: 15px;
+				position: relative;
+				bottom: 1px;
 			}
 		}
 	}
