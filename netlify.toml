@@ -5,6 +5,7 @@
 [build]
   command = "yarn build"
   publish = "dist"
+	baseUrl = "https://tardigrade.io/blog"
 
 [context.deploy-preview]
   command = "yarn build:preview"
