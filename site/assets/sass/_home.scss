@@ -1,0 +1,42 @@
+.filter-section {
+	margin-bottom: 20px;
+	justify-content: space-between;
+	display: flex;
+	.more-posts {
+		font-family: $primary-font;
+		font-weight: bold;
+		font-size: 22px;
+		color: $color--post-text;
+		@media (max-width: 991px) {
+			text-align: center;
+			position: relative;
+			bottom: 25px;
+			margin: 0 auto;
+		}
+	}
+	.dropdowns {
+		float: right;
+		@media (max-width: 991px) {
+			display: none;
+		}
+	}
+}
+
+.pagination {
+	margin-bottom: 50px;
+	margin-top: 30px;
+	.paging-navigation {
+		font-family: $primary-font;
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		.paging-button {
+			color: $color--blue;
+		}
+		.disabled {
+			opacity: .2;
+			cursor: default;
+			text-decoration: none;
+		}
+	}
+}

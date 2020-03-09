@@ -5,3 +5,7 @@ title = "Homepage"
 
 # Pagination
 paginate = 9
+
+[taxonomies]
+  category = "categories"
+  author = "authors"

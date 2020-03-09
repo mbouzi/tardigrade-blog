@@ -1,16 +1,37 @@
 {{ define "main" }}
 
-{{ partial "jumbotron" (dict "imageUrl" "/img/blog-index.jpg" "title" "Latest stories") }}
+{{ $lastUrlElement := index (last 1 (split (delimit (split .URL "/") "," "") ",")) 0 }}
+{{ $filterUrlElement := index (split (delimit (split .URL "/") "," "") ",") 1 }}
+{{ $resultName := delimit (split $lastUrlElement "-") " " " " }}
 
-<div class="mw7 center">
-  <ul class="flex-ns flex-wrap mhn1-ns pa3">
-      {{ range (.Paginator 4).Pages.ByPublishDate.Reverse }}
-          <div class="w-50-ns ph1-ns flex">
-            {{ .Render "li"}}
-          </div>
-      {{ end }}
-  </ul>
-  {{ partial "pagination" . }}
+<div class="post-results">
+	<div class="container">
+		<div class="back-msg">
+			<a class="back-msg__link" href="/">
+				<i class="fa fa-angle-left"></i>
+				<p class="back-msg__text">Storj Blog</p>
+			</a>
+		</div>
+		<div class="post-results__heading">
+	    {{ if $lastUrlElement }}
+					<h4 class="post-results__heading__title">{{ $resultName }} ({{ len .Pages }})</h4>
+					<div class="post-results__heading__title__filtering">
+						{{ if eq $filterUrlElement "authors"}}
+							{{ partial "taxonomy" (dict "taxonomy" .Site.Taxonomies.authors "taxonomyname" "authors" "lastUrlElement" $lastUrlElement "filter" $filterUrlElement  )}}
+						{{ else }}
+							{{ partial "taxonomy" (dict "taxonomy" .Site.Taxonomies.categories "taxonomyname" "categories" "lastUrlElement" $lastUrlElement "filter" $filterUrlElement   )}}
+						{{ end }}
+					</div>
+	    {{ end }}
+		</div>
+		<div id="posts" class="row posts">
+		 {{ range .Pages.ByPublishDate.Reverse }}
+			 <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 post-result">
+					 {{ .Render "li"}}
+			 </div>
+			{{ end }}
+	 </div>
+	</div>
 </div>
 
 {{end}}

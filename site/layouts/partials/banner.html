@@ -1,18 +1,16 @@
-{{ with .Site.GetPage "banner/banner.md"}}
 <div class="container-fluid banner-bg">
     <div class="container">
         <div class="row">
             <div class="col-xs-7 col-sm-6 banner-column">
-                <p class="banner-left">{{.Params.leftText}}</p>
+                <p class="banner-left">Tardigrade.io is Powered by Storj Labs</p>
             </div>
             <div class="col-xs-5 col-sm-6 banner-column text-right">
-                <a target="_blank" class="banner-cta" href="https://tardigrade.io">
-                    <p class="banner-cta-text">{{.Params.rightText}}</p>
-                    <img alt="tardigrade logo" src="/img/tardigrade-logo-only.svg" />
+                <a target="_blank" class="banner-cta" href="https://storj.io">
+                    <p class="banner-cta-text">Visit Storj Labs</p>
+                    <img class="banner-logo" alt="tardigrade logo" src="/img/tardigrade-banner-logo.svg" />
 										<i class="fa fa-angle-right"></i>
                 </a>
             </div>
         </div>
     </div>
 </div>
-{{end}}

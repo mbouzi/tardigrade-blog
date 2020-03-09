@@ -1,0 +1,44 @@
+{{ $taxonomy := .taxonomy }}
+{{ $taxonomyname := .taxonomyname }}
+{{ $lastUrlElement := .lastUrlElement }}
+{{ $filter := .filter }}
+{{ $author := delimit (split $lastUrlElement "-") " " " " }}
+{{ $currentPage := . }}
+{{ $url := .URL }}
+{{ with $taxonomy }}
+	<div class="btn-group dropdown">
+	  <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			{{ if eq $taxonomyname "categories"}}<img src="/img/category-icon.svg" class="icon">{{else}}<img src="/img/author-icon.svg" class="icon">{{end}}
+	    {{ if eq $taxonomyname "categories"}}
+				{{if $lastUrlElement}}
+					{{ if eq $filter "categories"}}
+						{{ trim $taxonomyname "ies"}}y: {{$lastUrlElement }}
+					{{ else }}
+						{{trim $taxonomyname "ies"}}y: all
+					{{ end }}
+				{{else}}
+					{{trim $taxonomyname "ies"}}y: all
+				{{end}}
+			{{else}}
+				{{ if $lastUrlElement }}
+					{{ if eq $filter "categories"}}
+						{{ trim $taxonomyname "s"}}: all
+					{{ else }}
+						{{ trim $taxonomyname "s"}}: {{ $author }}
+					{{ end }}
+				{{else}}
+					{{ trim $taxonomyname "s"}}: all
+				{{end}}
+			{{end}}
+			 <i class="fa fa-angle-down"></i>
+	  </button>
+	  <div class="dropdown-menu">
+			{{ if $lastUrlElement}}
+				<a class="dropdown-item" href="/"><p>All</p></a>
+			{{end}}
+			{{ range $name, $value := . }}
+				<a class="dropdown-item" href="{{ printf "/%s/" $taxonomyname | relLangURL }}{{ $name | urlize }}"><p >{{ humanize $name }}</p></a>
+			{{ end }}
+	  </div>
+	</div>
+{{ end }}

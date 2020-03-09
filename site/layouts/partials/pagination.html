@@ -1,18 +1,23 @@
-{{ if gt .Paginator.TotalPages 1 }}
 
-<nav class="cf pa3">
-    {{ if .Paginator.HasNext }}
-    <a class="fl dib link dim black f6 f5-ns b pa2" title="Next Page" href="{{ .Paginator.Next.URL }}">
-        &larr; Previous
-    </a>
-    {{ end }}
-    <div class="pagination">
-        {{ if .Paginator.HasPrev }}
-        <a class="fl dib link dim black f6 f5-ns b pa2" title="Previous Page" href="{{ .Paginator.Prev.URL }}">
-            Next &rarr;
-        </a>
-        {{ end }}
-    </div>
-</nav>
-
+{{ $pag := $.Paginator }}
+{{ if gt $pag.TotalPages 1 }}
+	<div class="pagination">
+		<nav class="navigation paging-navigation" role ="navigation">
+  		<a class="next paging-button {{ if not $pag.HasNext }}disabled{{ end }}" href="{{ if $pag.HasNext }}{{ $pag.Next.URL }}{{ end }}" aria-label="Next">&ltrif; Older Posts</span></a>
+	      {{ $.Scratch.Set "__paginator.ellipsed" false }}
+	      {{ range $pag.Pagers }}
+	          {{ $right := sub .TotalPages .PageNumber }}
+	          {{ $showNumber := or (le .PageNumber 3) (eq $right 0) }}
+	          {{ $showNumber := or $showNumber (and (gt .PageNumber (sub $pag.PageNumber 2)) (lt .PageNumber (add $pag.PageNumber 2)))  }}
+	          {{ if $showNumber }}
+	              {{ $.Scratch.Set "__paginator.ellipsed" false }}
+	              {{ $.Scratch.Set "__paginator.shouldEllipse" false }}
+	          {{ else }}
+	              {{ $.Scratch.Set "__paginator.shouldEllipse" (not ($.Scratch.Get "__paginator.ellipsed") ) }}
+	              {{ $.Scratch.Set "__paginator.ellipsed" true }}
+	          {{ end }}
+	      {{ end }}
+	  	<a class="previous paging-button {{ if not $pag.HasPrev }}disabled{{ end }}" href="{{ if $pag.HasPrev }}{{ $pag.Prev.URL }}{{ end }}"><span aria-hidden="true"></span>Newer Posts &rtrif;</a>
+		</nav>
+	</div>
 {{ end }}
