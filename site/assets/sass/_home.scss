@@ -1,74 +1,42 @@
 .filter-section {
 	margin-bottom: 20px;
-	.row {
-		.more-posts {
-			font-family: $primary-font;
-			font-weight: bold;
-			font-size: 22px;
-			color: $color--post-text;
-		}
-		.dropdowns {
-			float: right;
-			.dropdown {
-				.dropdown-toggle {
-					text-transform: capitalize;
-					background: transparent;
-					box-shadow: none;
-					border: none;
-					font-family: $secondary-font;
-					font-size: 14px;
-					font-weight: normal;
-					color: #93A1AF;
-					display: inline-block;
-					&:hover, &:focus, &:active {
-						background: transparent;
-					}
-					.fa {
-						margin-left: 20px;
-					}
-					.icon {
-						display: inline-block;
-						margin-right: 4px;
-					}
-				}
-				.dropdown-toggle::after {
-					display: none;
-				}
-				.dropdown-menu {
-					transform: translate3d(5px, 35px, 0px)!important;
-					border: 1px solid #F2F2F2;
-					box-sizing: border-box;
-					box-shadow: 0px 7px 14px rgba(20, 29, 37, 0.6);
-					border-radius: 6px;
-					max-height: 460px;
-					overflow: scroll;
-					.dropdown-item {
-						color: $color--post-text;
-						font-family: $secondary-font;
-						font-size: 14px;
-						font-weight: normal;
-						text-transform: capitalize;
-					}
-				}
-				.btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):active, .show>.btn-secondary.dropdown-toggle {
-					background: transparent;
-				}
-			}
+	justify-content: space-between;
+	display: flex;
+	.more-posts {
+		font-family: $primary-font;
+		font-weight: bold;
+		font-size: 22px;
+		color: $color--post-text;
+		@media (max-width: 991px) {
+			text-align: center;
+			position: relative;
+			bottom: 25px;
+			margin: 0 auto;
 		}
 	}
-	.form-inline {
-		.form-control {
-			 height: 33px;
-			 width: 100% !important;
-			 margin-right: 0 !important;
-			 font-size: 14px;
+	.dropdowns {
+		float: right;
+		@media (max-width: 991px) {
+			display: none;
 		}
-		.fa-search {
-			color: #93A1AF;
-			font-size: 14px;
-			position: absolute;
-			right: 24px;
-			z-index: 2;
+	}
+}
+
+.pagination {
+	margin-bottom: 50px;
+	margin-top: 30px;
+	.paging-navigation {
+		font-family: $primary-font;
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		.paging-button {
+			color: $color--blue;
+		}
+		.disabled {
+			opacity: .2;
+			cursor: default;
+			text-decoration: none;
 		}
 	}
 }
