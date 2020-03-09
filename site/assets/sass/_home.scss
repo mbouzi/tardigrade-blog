@@ -34,7 +34,9 @@
 			color: $color--blue;
 		}
 		.disabled {
-			display: none;
+			opacity: .2;
+			cursor: default;
+			text-decoration: none;
 		}
 	}
 }
