@@ -21,7 +21,7 @@
 				{{end}}
 			{{else}}
 				{{ if $lastUrlElement }}
-					{{ if eq $filter "categories"}}
+					{{ if ne $filter "authors"}}
 						{{ trim $taxonomyname "s"}}: all
 					{{ else }}
 						{{ trim $taxonomyname "s"}}: {{ $author }}
