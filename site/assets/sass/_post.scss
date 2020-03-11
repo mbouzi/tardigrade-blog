@@ -15,6 +15,12 @@
 		}
 	}
 }
+.card {
+	height: 430px;
+	@media (max-width: 768px) {
+		height: 500px;
+	}
+}
 .card, .first-post {
 	margin-bottom: 40px;
 	border: none !important;
@@ -28,7 +34,10 @@
 		}
 	}
 	.card-body {
+		position: relative;
+		padding: 20px;
 		.blog-post-info {
+			margin-bottom: -10px;
 			.row {
 				justify-content: space-between;
 				.blog-post-info-text {
@@ -67,13 +76,16 @@
 		line-height: 20px;
 		color: $color--post-text;
 	}
-	.read-more {
-		font-family: $primary-font;
-		font-weight: bold;
-		font-size: 12px;
-		line-height: 26px;
-		display: inline-block;
-		color: $color--blue;
+	.read-more-wrapper {
+		position: absolute;
+		bottom: 15px;
+		.read-more {
+			font-family: $primary-font;
+			font-weight: bold;
+			font-size: 12px;
+			line-height: 26px;
+			display: inline-block;
+		}
 	}
 	.fa-angle-right {
 		position: relative;
