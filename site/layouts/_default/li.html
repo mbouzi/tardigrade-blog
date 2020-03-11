@@ -6,6 +6,8 @@
 		{{ if gt (len .Summary) 80 }}
     <p class="card-text">{{slicestr .Summary 0 80}}...</p>
 		{{end}}
-    <a href="{{ .RelPermalink }}" class="read-more">Read more </a><i class="fa fa-angle-right"></i>
+		<div class="read-more-wrapper">
+    	<a href="{{ .RelPermalink }}" class="read-more">Read more </a><i class="fa fa-angle-right"></i>
+		</div>
   </div>
 </div>
