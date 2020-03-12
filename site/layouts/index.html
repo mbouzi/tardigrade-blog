@@ -6,12 +6,19 @@
 {{ $lastUrlElement := index (last 1 (split (delimit (split .URL "/") "," "") ",")) 0 }}
 {{ $filterUrlElement := index (split (delimit (split .URL "/") "," "") ",") 1 }}
 {{ $paginator := .Paginate (where .Data.Pages "Type" "posts") }}
+{{ $pageNumber := $paginator.PageNumber }}
 
 
 <div class="homepage-posts">
 	<div class="container">
 		<div class="filter-section">
-			<h3 class="more-posts">More Posts</h3>
+			<h3 class="more-posts">
+				{{ if gt $pageNumber 1 }}
+					Older Posts (Page {{$paginator.PageNumber}})
+				{{ else }}
+					More Posts
+				{{ end }}
+			</h3>
 			<div class="dropdowns">
 				{{ partial "taxonomy" (dict "taxonomy" .Site.Taxonomies.authors "taxonomyname" "authors" "lastUrlElement" $lastUrlElement "filter" $filterUrlElement  )}}
 				{{ partial "taxonomy" (dict "taxonomy" .Site.Taxonomies.categories "taxonomyname" "categories" "lastUrlElement" $lastUrlElement "filter" $filterUrlElement )}}
