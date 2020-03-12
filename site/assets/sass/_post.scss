@@ -242,10 +242,29 @@
 		&__img {
 			margin-right: 10px;
 		}
+		.twitter {
+			&:hover {
+				background: #03abedCC;
+				color: #fff;
+			}
+		}
 		.facebook {
-			background: #3C5A99;
-			color: #fff;
-			border: none;
+			&:hover {
+				background: #3C5A99CC;
+				color: #fff;
+			}
+		}
+		.reddit {
+			&:hover {
+				background: #eb4600BF;
+				color: #fff;
+			}
+		}
+		.email {
+			&:hover {
+				background: #929eabCC;
+				color: #fff;
+			}
 		}
 	}
 	&__more-posts {
