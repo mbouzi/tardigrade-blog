@@ -4302,7 +4302,6 @@ fsevents@^1.2.7:
   dependencies:
     bindings "^1.5.0"
     nan "^2.12.1"
-    node-pre-gyp "*"
 
 fstream@^1.0.0, fstream@^1.0.12:
   version "1.0.12"
@@ -5028,6 +5027,14 @@ hugo-bin@^0.52.0:
     pkg-conf "^3.1.0"
     rimraf "^3.0.1"
     signale "^1.4.0"
+
+hugo-extended@^0.64.1:
+  version "0.64.1"
+  resolved "https://registry.yarnpkg.com/hugo-extended/-/hugo-extended-0.64.1.tgz#e918f8cf4617cbdf19cfa56bca874478e252a3d5"
+  integrity sha512-GrqRbhXZrp/Pw2FCGtj4Y5KjEma51uby0yV859KJI49vBmSV8qPAUfuBu46Uofp0FKjFsY0q2+1EVsOX2tTEvQ==
+  dependencies:
+    bin-wrapper "^4.1.0"
+    rimraf "^3.0.1"
 
 iconv-lite@0.4.24, iconv-lite@^0.4.24, iconv-lite@^0.4.4, iconv-lite@~0.4.13:
   version "0.4.24"
