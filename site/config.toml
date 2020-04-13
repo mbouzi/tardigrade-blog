@@ -1,5 +1,5 @@
-# baseurl = "/"
-baseURL = "https://tardigrade.io/blog"
+baseurl = "/"
+# baseURL = "https://tardigrade.io/blog"
 languageCode = "en-us"
 languageLang = "en"
 title = "Blog"

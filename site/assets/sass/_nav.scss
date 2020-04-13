@@ -33,12 +33,21 @@
 	.navbar-brand {
 		margin-bottom: 23px;
 	}
+	.navbar-collapse {
+		justify-content: center !important;
+	}
 	.nav-sections {
 		display: flex;
+		@media only screen and (max-width: 1024px) {
+			display: block;
+		}
 		.main-section {
 			margin-right: 200px;
 			@media only screen and (max-width: 1200px) {
 				margin-right: 100px;
+			}
+			@media only screen and (max-width: 1024px) {
+				margin-right: 0;
 			}
 		}
 	}
@@ -62,6 +71,9 @@
 		.support-link {
 			position: relative;
 			left: 17px;
+			@media only screen and (max-width: 1024px) {
+				left: 29px;
+			}
 		}
 		.blog-link {
 			position: relative;
@@ -71,12 +83,23 @@
 				color: #93A1AF;
 				text-shadow: none;
 			}
+			@media only screen and (max-width: 1024px) {
+				left: 40px;
+				top: 11px;
+			}
 		}
 		&.active {
 			.link-style {
 				font-weight: bold;
 				color: $color--blue;
 			}
+		}
+	}
+	.login-link-wrapper {
+		@media only screen and (max-width: 1024px) {
+			text-align: center;
+			position: relative;
+			right: 8px;
 		}
 	}
 	.nav-item-cta {
