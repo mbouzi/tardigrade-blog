@@ -2,7 +2,7 @@
 baseURL = "https://tardigrade.io/blog"
 languageCode = "en-us"
 languageLang = "en"
-title = "Homepage"
+title = "Blog"
 
 # Pagination
 paginate = 9
