@@ -1,0 +1,38 @@
+{{ define "main" }}
+
+{{ range first 1 (where .Paginator.Pages "Section" "post")}}
+	{{ partial "first-post" . }}
+{{ end }}
+{{ $lastUrlElement := index (last 1 (split (delimit (split .URL "/") "," "") ",")) 0 }}
+{{ $filterUrlElement := index (split (delimit (split .URL "/") "," "") ",") 1 }}
+{{ $paginator := .Paginate (where .Data.Pages "Type" "posts") }}
+{{ $pageNumber := $paginator.PageNumber }}
+
+
+<div class="homepage-posts">
+	<div class="container">
+		<div class="filter-section">
+			<h3 class="more-posts">
+				{{ if gt $pageNumber 1 }}
+					Older Posts (Page {{$paginator.PageNumber}})
+				{{ else }}
+					More Posts
+				{{ end }}
+			</h3>
+			<div class="dropdowns">
+				{{ partial "taxonomy" (dict "taxonomy" .Site.Taxonomies.authors "taxonomyname" "authors" "lastUrlElement" $lastUrlElement "filter" $filterUrlElement  )}}
+				{{ partial "taxonomy" (dict "taxonomy" .Site.Taxonomies.categories "taxonomyname" "categories" "lastUrlElement" $lastUrlElement "filter" $filterUrlElement )}}
+			</div>
+		</div>
+	  <div id="posts" class="row posts">
+			{{ range $paginator.Pages }}
+				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 homepage-post">
+	          {{ .Render "li"}}
+	      </div>
+	     {{ end }}
+	  </div>
+		{{ partial "pagination" . }}
+	</div>
+</div>
+
+{{end}}

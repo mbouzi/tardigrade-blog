@@ -85,3 +85,18 @@
 		}
 	}
 }
+
+.coming-soon {
+	background: #fff;
+	height: 270px;
+	text-align: center;
+	width: 100%;
+	&__message {
+		font-size: 34px;
+		margin: 0 auto;
+		position: relative;
+		top: 30%;
+		font-weight: bold;
+		font-family: $primary-font;
+	}
+}
