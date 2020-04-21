@@ -30,8 +30,29 @@
 
 .navbar {
 	background: #fff;
+	.navbar-brand {
+		margin-bottom: 23px;
+	}
+	.navbar-collapse {
+		justify-content: center !important;
+	}
+	.nav-sections {
+		display: flex;
+		@media only screen and (max-width: 1024px) {
+			display: block;
+		}
+		.main-section {
+			margin-right: 200px;
+			@media only screen and (max-width: 1200px) {
+				margin-right: 100px;
+			}
+			@media only screen and (max-width: 1024px) {
+				margin-right: 0;
+			}
+		}
+	}
 	.navbar-list-item {
-		margin: 2px 20px 0;
+		margin: 2px 10px 0;
 		.link-style {
 			font-family: $primary-font;
 			font-weight: normal;
@@ -39,13 +60,46 @@
 			line-height: 20px;
 			color: #93A1AF;
 			display: inline-block;
-			margin-top: 5px;
+			margin-top: 22px;
+			box-shadow: none;
+			&:hover {
+				text-decoration: none;
+				color: #93A1AF;
+				text-shadow: 1px 0 0 #93A1AF;
+			}
+		}
+		.support-link {
+			position: relative;
+			left: 17px;
+			@media only screen and (max-width: 1024px) {
+				left: 29px;
+			}
+		}
+		.blog-link {
+			position: relative;
+			left: 52px;
+			&:hover {
+				text-decoration: none;
+				color: #93A1AF;
+				text-shadow: none;
+			}
+			@media only screen and (max-width: 1024px) {
+				left: 40px;
+				top: 11px;
+			}
 		}
 		&.active {
 			.link-style {
 				font-weight: bold;
 				color: $color--blue;
 			}
+		}
+	}
+	.login-link-wrapper {
+		@media only screen and (max-width: 1024px) {
+			text-align: center;
+			position: relative;
+			right: 8px;
 		}
 	}
 	.nav-item-cta {
@@ -59,6 +113,48 @@
 			border: 2px solid $color--blue;
 			background: transparent;
 			box-shadow: none;
+			margin-top: 10px;
 		}
+	}
+	.btn-group {
+		position: relative;
+		bottom: 10px;
+		.dropdown-menu {
+		  font-size: 16px;
+		  width: 300px;
+			@media only screen and (max-width: 991px) {
+				margin: 0 auto;
+				margin-bottom: 12px;
+			}
+		  .dropdown-divider {
+		    width: 85%;
+		    margin: 10px auto;
+		  }
+		  .link-pointer {
+		    float: right;
+		    position: relative;
+		    top: 7px;
+		    display: none
+		  }
+		  .dropdown-item {
+		    font-family: $secondary-font;
+		    &:hover {
+		      color: $color--blue;
+		      font-weight: bold;
+					.link-pointer {
+						display: block;
+					}
+		    }
+			}
+			.dropdown-header {
+			 font-family: $primary-font;
+			 color: #93A1AF;
+			 font-weight: bold;
+			 font-size: 16px;
+			 &:hover {
+				 color: #93A1AF;
+			 }
+		 }
+	 }
 	}
 }

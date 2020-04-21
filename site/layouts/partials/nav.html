@@ -1,21 +1,77 @@
 {{ partial "banner" . }}
-<nav class="navbar navbar-light navbar-expand-lg menu">
+<nav class="navbar navbar-expand-lg menu">
 	<div class="container">
 		<a href="/" class="navbar-brand">
-			<img src="/blog/img/tardigrade-logo.svg" alt="Tardirage" class="logo">
+			<img src="/img/tardigrade-logo.svg" alt="Tardigrade Logo" class="logo">
 		</a>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-	    <span class="navbar-toggler-icon"></span>
-	  </button>
-		<div class="collapse nav navbar-collapse justify-content-end" id="navbarNav">
-	    <ul class="navbar-nav">
-				<li class="navbar-list-item"><a class="link-style" href="https://documentation.tardigrade.io/">Docs</a></li>
-				<li class="navbar-list-item"><a class="link-style" href="https://tardigrade.io/community">Community</a></li>
-				<li class="navbar-list-item"><a class="link-style" href="https://tardigrade.io/partner">Partners</a></li>
-				<li class="navbar-list-item active"><a class="link-style" href="/blog">Blog</a></li>
-				<li class="navbar-list-item"><a class="link-style" href="https://support.tardigrade.io/hc/en-us">Support</a></li>
-				<a class="nav-item-cta" href="/sign-up-node-operator/"><button class="btn btn-primary nav-join">Join the Waitlist</button></a></li>
-	    </ul>
-	  </div>
+
+    <button class="navbar-toggler navbar-light bg-light"  type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse nav navbar-collapse justify-content-end" id="navbarNav">
+			<ul class="nav-sections">
+				<li class="nav-section main-section">
+	        <ul class="navbar-nav ml-auto">
+						<li class="btn-group navbar-list-item">
+	            <button type="button" class="link-style navlink btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	              Developers
+	              <span class="sr-only">(current)</span>
+	            </button>
+	            <div class="dropdown-menu">
+	              <p class="dropdown-item dropdown-header" href="#">For Developers</p>
+	              <div class="dropdown-divider"></div>
+	              <a class="dropdown-item" href="https://documentation.tardigrade.io/">Docs<img class="link-pointer" alt="link pointer" src="/img/blue-carrot.svg" height="13" width="13"></a>
+	              <a class="dropdown-item" href="/community">Community<img class="link-pointer" alt="link pointer" src="/img/blue-carrot.svg" height="13" width="13"></a>
+								<a class="dropdown-item" href="https://support.tardigrade.io/hc/en-us">Support<img class="link-pointer" alt="link pointer" src="/img/blue-carrot.svg" height="13" width="13"></a>
+	            </div>
+		        </li>
+		        <li class="btn-group navbar-list-item">
+	            <button type="button" class="link-style navlink btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	              Partners
+	              <span class="sr-only">(current)</span>
+	            </button>
+	            <div class="dropdown-menu">
+	              <p class="dropdown-item dropdown-header" href="#">Our Partners</p>
+	              <div class="dropdown-divider"></div>
+	              <a class="dropdown-item" href="/partner">Open Source Partners<img class="link-pointer" alt="link pointer" src="/img/blue-carrot.svg" height="13" width="13"></a>
+	              <a class="dropdown-item" href="/tech-partner">Technology Partners<img class="link-pointer" alt="link pointer" src="/img/blue-carrot.svg" height="13" width="13"></a>
+	            </div>
+		        </li>
+		        <li class="navbar-list-item">
+	            <a class="link-style support-link" href="https://support.tardigrade.io/hc/en-us">
+                Support
+                <span class="sr-only">(current)</span>
+	            </a>
+		        </li>
+						<li class="navbar-list-item active">
+							<a class="link-style blog-link" href="/blog">
+								<p class="navlink">Blog
+								<span class="sr-only">(current)</span>
+								</p>
+							</a>
+						</li>
+	        </ul>
+				</li>
+				<li class="nav-section">
+					<ul class="navbar-nav ml-auto">
+						<li class="navbar-list-item login-link-wrapper">
+							<a class="link-style login-link" href="/login">
+								<p class="navlink">Log In
+								<span class="sr-only">(current)</span>
+								</p>
+							</a>
+						</li>
+						<li class="navbar-list-item navbar-list-item-btn">
+			        <a class="nav-item-cta" href="/satellites">
+		            <button class="btn btn-primary nav-join">
+		                Get Started
+		            </button>
+			        </a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+    </div>
 	</div>
 </nav>
