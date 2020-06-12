@@ -67,6 +67,7 @@
     "webpack-merge": "^4.1.4"
   },
   "dependencies": {
-    "hugo-extended": "^0.64.1"
+    "hugo-extended": "^0.64.1",
+    "websocket-extensions": "^0.1.4"
   }
 }
