@@ -11,7 +11,7 @@ paginate = 9
   category = "categories"
   author = "authors"
 
-	[[headers]]
-	  for = "/*"
-	  [headers.values]
-	Access-Control-Allow-Origin = "*"
+	# [[headers]]
+	#   for = "/*"
+	#   [headers.values]
+	# Access-Control-Allow-Origin = "*"
