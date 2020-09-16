@@ -68,6 +68,7 @@
   },
   "dependencies": {
     "hugo-extended": "^0.75.1",
+    "node-fetch": "^2.6.1",
     "websocket-extensions": "^0.1.4"
   }
 }
