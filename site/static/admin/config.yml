@@ -1,6 +1,6 @@
-backend:
+mainbackend:
   name: git-gateway
-  branch: master
+  branch: main
   identity_url: "https://adoring-borg-aad42e.netlify.app/.netlify/identity"
   gateway_url: "https://adoring-borg-aad42e.netlify.app/.netlify/git/github"
 

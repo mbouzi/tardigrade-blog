@@ -19,15 +19,15 @@ Imagine that there is a person named Roy. Roy has some illegal content that he w
 Since Roy knowingly uploaded illegal content, he could certainly be held responsible. In addition, any other persons or groups that shared the decryption keys and indicated they are used to access illegal content would also probably be in hot water.
 
 **But what about DriveShare farmers who may have hosted a few encrypted shards of Roy’s file?**
-  
-DriveShare farmers receive encrypted shards from the network in an [automatic fashion](https://raw.githubusercontent.com/Storj/whitepapers/master/storj/Storj%20Whitepaper.pdf) \[2\]. Farmers cannot tell shards apart or piece them together as it is unlikely they would have all the requisite shards to do this. In addition, farmers would not necessarily know what algorithm was used to encrypt the shards as uploaders may decide to use their own encryption schemes. Finally, farmers would not have the decryption keys to any shards they received.
+
+DriveShare farmers receive encrypted shards from the network in an [automatic fashion](https://raw.githubusercontent.com/Storj/whitepapers/main/storj/Storj%20Whitepaper.pdf) \[2\]. Farmers cannot tell shards apart or piece them together as it is unlikely they would have all the requisite shards to do this. In addition, farmers would not necessarily know what algorithm was used to encrypt the shards as uploaders may decide to use their own encryption schemes. Finally, farmers would not have the decryption keys to any shards they received.
 
 On top of all this, if Roy is apprehended and can no longer pay to support his content on the network, DriveShare software will automatically purge the shards as there is no longer an economic incentive to use limited hard drive space to hold them when other uploaders are paying for other shards. This is the same automatic process that would happen if any shard was no longer being paid for. Therefore, even if the keys to decrypt the content are publicly available online, the content itself would no longer be retrievable from the Storj network.
 
 Since all this is happening in an automatic, encrypted fashion, we see the situation for the farmer as similar to someone running a Tor relay. The [Tor Project Legal FAQ](https://www.torproject.org/eff/tor-legal-faq.html.en) \[1\] indicates that, as of April 21, 2014 they (the project), “...aren’t aware of anyone being sued or prosecuted in the United States just for running a Tor relay. Further, we believe that running a Tor relay...is legal under U.S. law.” Tor’s listed [active sponsors](https://www.torproject.org/about/sponsors.html.en) \[3\] for 2014 include the US Department of State Bureau of Democracy, Human Rights and Labor (2013-2015). We find it doubtful the US Department of State would support such a project if running a relay would necessarily put you in legal hot water.
 
 **Is there anything a farmer can do to prevent unencrypted illegal content on the Storj network without violating privacy?**
-  
+
 **Absolutely. We want to make sure farmers only ever receive sharded, encrypted content, so we plan to allow farmers to reject shards above a certain, standardizable size and to reject shards that do not have sufficient entropy. The entropy check helps assure the farmer that a shard being received is not in plain text while not requiring the shard to be encrypted in a particular fashion.
 
 **What if a farmer wants to be more proactive? What if she wants to help prevent encrypted illegal content from being stored on the Storj network?**  
@@ -48,6 +48,6 @@ Taken together, the techniques, approaches and strategies discussed in this post
 **References**
 
 \[1\] Tor Project, "The Legal FAQ for Tor Relay Operators", [https://www.torproject.org/eff/tor-legal-faq.html.en](https://www.torproject.org/eff/tor-legal-faq.html.en), 2014  
-\[2\] S. Wilkinson, contributors: V. Buterin, T. Boshevski, “Storj: Peer-to-Peer Cloud Storage Network”, [https://raw.githubusercontent.com/Storj/whitepapers/master/storj/Storj%20Whitepaper.pdf](https://raw.githubusercontent.com/Storj/whitepapers/master/storj/Storj%20Whitepaper.pdf), 2014  
+\[2\] S. Wilkinson, contributors: V. Buterin, T. Boshevski, “Storj: Peer-to-Peer Cloud Storage Network”, [https://raw.githubusercontent.com/Storj/whitepapers/main/storj/Storj%20Whitepaper.pdf](https://raw.githubusercontent.com/Storj/whitepapers/main/storj/Storj%20Whitepaper.pdf), 2014  
 \[3\] Tor Project, "Tor: Sponsors", [https://www.torproject.org/about/sponsors.html.en](https://www.torproject.org/about/sponsors.html.en), 2014  
 \[4\] Wikipedia, "Checksum", [https://en.wikipedia.org/wiki/Checksum](https://en.wikipedia.org/wiki/Checksum), 2012
