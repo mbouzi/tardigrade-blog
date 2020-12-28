@@ -1,4 +1,4 @@
-mainbackend:
+backend:
   name: git-gateway
   branch: main
   identity_url: "https://adoring-borg-aad42e.netlify.app/.netlify/identity"
